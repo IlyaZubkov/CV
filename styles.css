@@ -154,6 +154,40 @@ a:hover {
   z-index: 1000;
 }
 
+#animation-toggle {
+  position: fixed;
+  top: 20px;
+  right: 70px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-color);
+  z-index: 1000;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.9em;
+  margin: 10px;
+}
+
+.no-animations .glass {
+  transition: none !important;
+  transform: none !important;
+}
+
+.no-animations .hidden,
+.no-animations .visible {
+  opacity: 1 !important;
+  --translateY: 0px !important;
+}
+
 .hidden {
   opacity: 0;
   --translateY: 20px;
