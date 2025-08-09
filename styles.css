@@ -72,7 +72,13 @@ header .contact {
   transform-style: preserve-3d;
 }
 
-.glass:hover {
+header.glass,
+footer.glass {
+  transition: none;
+  transform: none;
+}
+
+main .glass:hover {
   --hover-translate: -5px;
   --scale: 1.02;
   box-shadow: 0 12px 40px var(--glass-shadow);
