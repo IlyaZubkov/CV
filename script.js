@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       el.style.setProperty('--rotateX', '0deg');
       el.style.setProperty('--rotateY', '0deg');
     });
+
     animationToggle.textContent = '🛑';
     animationsEnabled = false;
     localStorage.setItem('animations', 'off');
@@ -75,6 +76,20 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       enableAnimations();
     }
+
+    el.addEventListener('click', (e) => {
+      const rect = el.getBoundingClientRect();
+      const ripple = document.createElement('span');
+      const size = Math.max(rect.width, rect.height);
+      ripple.classList.add('ripple');
+      ripple.style.width = ripple.style.height = `${size}px`;
+      ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+      ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+      el.appendChild(ripple);
+      ripple.addEventListener('animationend', () => {
+        ripple.remove();
+      });
+    });
   });
 
   const themeToggle = document.getElementById('theme-toggle');
