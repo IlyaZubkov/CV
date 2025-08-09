@@ -46,11 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const animationToggle = document.getElementById('animation-toggle');
+  const glassElements = document.querySelectorAll('main .glass');
   let animationsEnabled = localStorage.getItem('animations') !== 'off';
 
   function enableAnimations() {
     document.body.classList.remove('no-animations');
-    document.querySelectorAll('.glass').forEach((el) => {
+    glassElements.forEach((el) => {
       el.classList.add('hidden');
       observer.observe(el);
       el.addEventListener('mousemove', handleMouseMove);
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function disableAnimations() {
     document.body.classList.add('no-animations');
     observer.disconnect();
-    document.querySelectorAll('.glass').forEach((el) => {
+    glassElements.forEach((el) => {
       el.classList.remove('hidden');
       el.classList.add('visible');
       el.removeEventListener('mousemove', handleMouseMove);
