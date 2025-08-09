@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           entry.target.classList.remove('hidden');
+          createRipple(entry.target);
         } else {
           entry.target.classList.remove('visible');
           entry.target.classList.add('hidden');
@@ -29,6 +30,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const el = e.currentTarget;
     el.style.setProperty('--rotateX', '0deg');
     el.style.setProperty('--rotateY', '0deg');
+  };
+
+  const createRipple = (el) => {
+    const ripple = document.createElement('span');
+    const size = Math.max(el.offsetWidth, el.offsetHeight);
+    ripple.classList.add('ripple');
+    ripple.style.width = ripple.style.height = `${size}px`;
+    ripple.style.left = `${(el.offsetWidth - size) / 2}px`;
+    ripple.style.top = `${(el.offsetHeight - size) / 2}px`;
+    el.appendChild(ripple);
+    ripple.addEventListener('animationend', () => {
+      ripple.remove();
+    });
   };
 
   const animationToggle = document.getElementById('animation-toggle');
@@ -70,24 +84,12 @@ document.addEventListener('DOMContentLoaded', () => {
     disableAnimations();
   }
 
-  animationToggle.addEventListener('click', (e) => {
+  animationToggle.addEventListener('click', () => {
     if (animationsEnabled) {
       disableAnimations();
     } else {
       enableAnimations();
     }
-
-    const rect = animationToggle.getBoundingClientRect();
-    const ripple = document.createElement('span');
-    const size = Math.max(rect.width, rect.height);
-    ripple.classList.add('ripple');
-    ripple.style.width = ripple.style.height = `${size}px`;
-    ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
-    ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
-    animationToggle.appendChild(ripple);
-    ripple.addEventListener('animationend', () => {
-      ripple.remove();
-    });
   });
 
   const themeToggle = document.getElementById('theme-toggle');
