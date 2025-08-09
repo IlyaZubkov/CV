@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const disclaimerModal = document.getElementById('disclaimer-modal');
   const disclaimerClose = document.getElementById('disclaimer-close');
   if (disclaimerModal) {
-    disclaimerModal.showModal();
+    disclaimerModal.show();
     disclaimerClose.addEventListener('click', () => disclaimerModal.close());
   }
 });
