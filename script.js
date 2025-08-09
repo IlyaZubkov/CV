@@ -110,9 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const disclaimerModal = document.getElementById('disclaimer-modal');
   const disclaimerClose = document.getElementById('disclaimer-close');
-  if (disclaimerModal) {
-    disclaimerModal.show();
-    disclaimerClose.addEventListener('click', () => disclaimerModal.close());
+  const disclaimerAcknowledged = localStorage.getItem('disclaimerAcknowledged');
+  if (disclaimerModal && disclaimerAcknowledged !== 'true') {
+    disclaimerModal.showModal();
+    disclaimerClose.addEventListener('click', () => {
+      disclaimerModal.close();
+      localStorage.setItem('disclaimerAcknowledged', 'true');
+    });
   }
 });
 
