@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           entry.target.classList.remove('hidden');
-          createRipple(entry.target);
         } else {
           entry.target.classList.remove('visible');
           entry.target.classList.add('hidden');
@@ -30,20 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const el = e.currentTarget;
     el.style.setProperty('--rotateX', '0deg');
     el.style.setProperty('--rotateY', '0deg');
-  };
-
-  const createRipple = (el) => {
-    const ripple = document.createElement('span');
-    const rect = el.getBoundingClientRect();
-    const size = Math.max(window.innerWidth, window.innerHeight) * 2;
-    ripple.classList.add('ripple');
-    ripple.style.width = ripple.style.height = `${size}px`;
-    ripple.style.left = `${rect.left + rect.width / 2 - size / 2}px`;
-    ripple.style.top = `${rect.top + rect.height / 2 - size / 2}px`;
-    document.body.appendChild(ripple);
-    ripple.addEventListener('animationend', () => {
-      ripple.remove();
-    });
   };
 
   const animationToggle = document.getElementById('animation-toggle');
