@@ -189,10 +189,16 @@ a:hover {
   z-index: 1000;
 }
 
-.disclaimer {
-  text-align: center;
-  font-size: 0.9em;
-  margin: 10px;
+#disclaimer-modal {
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  background: var(--glass-bg);
+  color: var(--text-color);
+  padding: 20px;
+}
+
+#disclaimer-modal::backdrop {
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .no-animations .glass {
