@@ -142,6 +142,7 @@ a:hover {
   justify-content: center;
   cursor: pointer;
   color: var(--text-color);
+  z-index: 1000;
 }
 
 .hidden {
