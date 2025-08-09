@@ -105,5 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', newTheme);
     themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
   });
+
+  const disclaimerModal = document.getElementById('disclaimer-modal');
+  const disclaimerClose = document.getElementById('disclaimer-close');
+  if (disclaimerModal) {
+    disclaimerModal.showModal();
+    disclaimerClose.addEventListener('click', () => disclaimerModal.close());
+  }
 });
 

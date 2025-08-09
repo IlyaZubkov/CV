@@ -15,7 +15,10 @@
 <body>
 <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
 <button id="animation-toggle" aria-label="Toggle animations">💫</button>
-<p class="disclaimer">This page has cool animations. Use the top-right button to turn them off.</p>
+<dialog id="disclaimer-modal">
+  <p>This page has cool animations. Use the top-right button to turn them off.</p>
+  <button id="disclaimer-close" aria-label="Close disclaimer">OK</button>
+</dialog>
 <header class="glass">
   <div class="container">
     <h1>Ilya Zubkov</h1>
