@@ -34,12 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const createRipple = (el) => {
     const ripple = document.createElement('span');
-    const size = Math.max(el.offsetWidth, el.offsetHeight);
+    const rect = el.getBoundingClientRect();
+    const size = Math.max(window.innerWidth, window.innerHeight) * 2;
     ripple.classList.add('ripple');
     ripple.style.width = ripple.style.height = `${size}px`;
-    ripple.style.left = `${(el.offsetWidth - size) / 2}px`;
-    ripple.style.top = `${(el.offsetHeight - size) / 2}px`;
-    el.appendChild(ripple);
+    ripple.style.left = `${rect.left + rect.width / 2 - size / 2}px`;
+    ripple.style.top = `${rect.top + rect.height / 2 - size / 2}px`;
+    document.body.appendChild(ripple);
     ripple.addEventListener('animationend', () => {
       ripple.remove();
     });
