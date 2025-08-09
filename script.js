@@ -14,6 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.glass').forEach((el) => {
     el.classList.add('hidden');
     observer.observe(el);
+
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const rotateY = ((x / rect.width) - 0.5) * 10;
+      const rotateX = ((y / rect.height) - 0.5) * -10;
+      el.style.setProperty('--rotateX', `${rotateX}deg`);
+      el.style.setProperty('--rotateY', `${rotateY}deg`);
+    });
+
+    el.addEventListener('mouseleave', () => {
+      el.style.setProperty('--rotateX', '0deg');
+      el.style.setProperty('--rotateY', '0deg');
+    });
   });
 
   const themeToggle = document.getElementById('theme-toggle');
