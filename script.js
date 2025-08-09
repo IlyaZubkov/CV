@@ -3,7 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+        entry.target.classList.remove('hidden');
+      } else {
+        entry.target.classList.remove('visible');
+        entry.target.classList.add('hidden');
       }
     });
   }, { threshold: 0.1 });
