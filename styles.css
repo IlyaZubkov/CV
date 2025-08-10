@@ -239,13 +239,16 @@ a:hover {
 }
 
 .roadmap-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   display: inline-block;
-  margin-top: 10px;
-  padding: 5px 15px;
-  border: 1px solid var(--glass-border);
+  padding: 8px 16px;
+  border: none;
   border-radius: 8px;
-  background: var(--glass-bg);
-  color: var(--text-color);
+  background: var(--link-color);
+  color: #fff;
+  font-weight: 700;
   cursor: pointer;
   box-shadow: 0 4px 12px var(--glass-shadow);
   text-decoration: none;
@@ -253,6 +256,7 @@ a:hover {
 
 .roadmap-button:hover {
   box-shadow: 0 6px 20px var(--glass-shadow);
+  filter: brightness(1.1);
 }
 
 .no-animations .glass {
