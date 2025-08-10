@@ -261,6 +261,15 @@ a:hover {
 
   .company-panel {
     margin-top: 40px;
+    position: relative;
+  }
+
+  .company-start-date {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 0.9em;
+    color: var(--date-color);
   }
 
   .project {
