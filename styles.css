@@ -254,10 +254,33 @@ a:hover {
   text-decoration: none;
 }
 
-.roadmap-button:hover {
-  box-shadow: 0 6px 20px var(--glass-shadow);
-  filter: brightness(1.1);
-}
+  .roadmap-button:hover {
+    box-shadow: 0 6px 20px var(--glass-shadow);
+    filter: brightness(1.1);
+  }
+
+  .company-panel {
+    margin-top: 40px;
+  }
+
+  .project {
+    margin-bottom: 20px;
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .project-duration {
+    font-size: 0.9em;
+    color: var(--date-color);
+  }
+
+  .project p {
+    margin-top: 5px;
+  }
 
 .no-animations .glass {
   transition: none !important;
