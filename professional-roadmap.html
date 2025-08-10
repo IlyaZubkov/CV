@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Roadmap - Ilya Zubkov</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <script>
+    const storedTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', storedTheme || systemTheme);
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+<button id="animation-toggle" aria-label="Toggle animations">💫</button>
+<header class="glass">
+  <div class="container">
+    <h1>Professional Roadmap</h1>
+  </div>
+</header>
+<main class="container">
+  <section class="glass">
+    <h2>Professional Roadmap</h2>
+    <p>Below is a quick overview of my career progression and future goals.</p>
+    <ul>
+      <li>2025: Senior Product Owner at Jets Better</li>
+      <li>2024: Product Owner at Binary Studio</li>
+      <li>2023: Technical Project Manager at Prof-IT Blockchain</li>
+      <li>2021: Junior Software Engineer at Playbatch</li>
+    </ul>
+  </section>
+</main>
+<footer class="glass">
+  <div class="container">
+    <p>&copy; 2025 Ilya Zubkov</p>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
