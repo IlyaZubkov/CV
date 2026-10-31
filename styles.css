@@ -1,16 +1,16 @@
 :root {
   color-scheme: light;
-  --bg-gradient: linear-gradient(135deg, #ffffff 0%, #eaeaea 100%);
-  --overlay-color: rgba(255, 255, 255, 0.4);
-  --text-color: #1e1e1e;
-  --link-color: #1e88e5;
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(0, 0, 0, 0.1);
-  --glass-shadow: rgba(0, 0, 0, 0.1);
-  --skills-bg: rgba(0, 0, 0, 0.05);
-  --skills-border: rgba(0, 0, 0, 0.1);
-  --date-color: #666;
-  --h2-border: rgba(0, 0, 0, 0.2);
+  --bg-gradient: linear-gradient(135deg, #edf3fb 0%, #f5f7fb 55%, #eaf0f7 100%);
+  --overlay-color: rgba(247, 250, 255, 0.12);
+  --text-color: #334155;
+  --link-color: #245ab7;
+  --glass-bg: rgba(255, 255, 255, 0.94);
+  --glass-border: #dce5f0;
+  --glass-shadow: rgba(30, 58, 95, 0.07);
+  --skills-bg: #eff4fc;
+  --skills-border: #dce6f5;
+  --date-color: #57677d;
+  --h2-border: #e4ebf4;
 }
 
 [data-theme="dark"] {
@@ -326,5 +326,63 @@ a:hover {
 .visible {
   opacity: 1;
   --translateY: 0px;
+}
+
+[data-theme="light"] body {
+  background-attachment: fixed;
+}
+
+[data-theme="light"] header.glass {
+  background: linear-gradient(120deg, #ffffff 15%, #f0f5ff 100%);
+  border-top: 3px solid var(--link-color);
+  border-radius: 0 0 20px 20px;
+}
+
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3 {
+  color: #172c49;
+}
+
+[data-theme="light"] h1 {
+  letter-spacing: -0.035em;
+}
+
+[data-theme="light"] h2 {
+  border-bottom-width: 1px;
+  padding-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+[data-theme="light"] .skills-list li {
+  color: #284c7d;
+  border-radius: 8px;
+}
+
+[data-theme="light"] .job + .job {
+  border-top: 1px solid var(--h2-border);
+  margin-top: 24px;
+  padding-top: 8px;
+}
+
+[data-theme="light"] .roadmap-button {
+  box-shadow: 0 3px 8px rgba(36, 90, 183, 0.15);
+}
+
+[data-theme="light"] .roadmap-button:hover {
+  background: #1c4895;
+  filter: none;
+}
+
+[data-theme="light"] a:focus-visible,
+[data-theme="light"] button:focus-visible {
+  outline: 3px solid var(--link-color);
+  outline-offset: 4px;
+}
+
+[data-theme="light"] footer.glass {
+  background: #edf2f8;
+  color: var(--date-color);
+  box-shadow: none;
 }
 
