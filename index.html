@@ -6,7 +6,8 @@
   <title>Ilya Zubkov - Product Manager / Product Owner</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <script>
-    const storedTheme = localStorage.getItem('theme');
+    let storedTheme;
+    try { storedTheme = localStorage.getItem('theme'); } catch {}
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', storedTheme || systemTheme);
   </script>
@@ -14,11 +15,7 @@
 </head>
 <body>
 <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
-<button id="animation-toggle" aria-label="Toggle animations">💫</button>
-<dialog id="disclaimer-modal" class="glass">
-  <p>This page has cool animations. Use the top-right button to turn them off.</p>
-  <button id="disclaimer-close" aria-label="Close disclaimer">OK</button>
-</dialog>
+<button id="animation-toggle" aria-label="Animations" aria-pressed="false">💫</button>
 <header class="glass">
   <div class="container">
     <h1>Ilya Zubkov</h1>
@@ -29,6 +26,7 @@
       <a href="https://www.linkedin.com/in/ilyazubkov/">linkedin.com/in/ilyazubkov</a> |
       <a href="https://t.me/ilya_zub">@ilya_zub</a>
     </p>
+    <a class="download-button" href="Ilya-Zubkov-CV.pdf" download="Ilya-Zubkov-CV.pdf">Download CV (PDF)</a>
   </div>
 </header>
 <main class="container">

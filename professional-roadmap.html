@@ -9,7 +9,8 @@
       rel="stylesheet"
     />
     <script>
-      const storedTheme = localStorage.getItem("theme");
+      let storedTheme;
+      try { storedTheme = localStorage.getItem("theme"); } catch {}
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
         .matches
         ? "dark"
@@ -23,10 +24,11 @@
   </head>
   <body>
     <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
-    <button id="animation-toggle" aria-label="Toggle animations">💫</button>
+    <button id="animation-toggle" aria-label="Animations" aria-pressed="false">💫</button>
     <header class="glass">
       <div class="container">
         <h1>Professional Roadmap</h1>
+        <a class="download-button" href="Ilya-Zubkov-CV.pdf" download="Ilya-Zubkov-CV.pdf">Download CV (PDF)</a>
       </div>
     </header>
     <main class="container">

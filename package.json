@@ -1,0 +1,13 @@
+{
+  "name": "ilya-zubkov-cv",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs"
+  },
+  "engines": { "node": ">=22" },
+  "devDependencies": {
+    "playwright": "1.64.1"
+  }
+}
