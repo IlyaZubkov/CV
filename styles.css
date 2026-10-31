@@ -291,6 +291,22 @@ a:hover {
     margin-top: 5px;
   }
 
+@media (max-width: 600px) {
+  .roadmap-button,
+  .company-dates {
+    position: static;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-header h3 {
+    margin-bottom: 5px;
+  }
+}
+
 .no-animations .glass {
   transition: none !important;
   transform: none !important;
